@@ -131,7 +131,12 @@ void corner_detector_fast::compute(cv::InputArray image, std::vector<cv::KeyPoin
 		}
 		
 		// fill descriptor
-		for (int i = 0; i < 8; i++)
+		for (int i = directions[0]; i < 8; i++)
+		{
+			*ptr = (directions[i+1]+1)*1000;
+			ptr++;
+		}
+		for (int i = 0; i < directions[0]; i++)
 		{
 			*ptr = (directions[i+1]+1)*1000;
 			ptr++;

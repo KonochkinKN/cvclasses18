@@ -153,7 +153,9 @@ public:
 	Stitcher(){}
 
 	/// \brief aplly image stitcher algorithm to src and stored image
-	void apply(const cv::Mat& src, cv::Mat& dst);
+	void apply(const cv::Mat& src);
+	
+	cv::Mat getPanoram() const;
 
 private:
 	cv::Mat mPanoram;
